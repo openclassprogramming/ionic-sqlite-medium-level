@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Data</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">No Container <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="container"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Size</ion-label>
+        <ion-select interface="popover" [(ngModel)]="size">
+          <ion-select-option value="10">10</ion-select-option>
+          <ion-select-option value="20">20</ion-select-option>
+          <ion-select-option value="30">30</ion-select-option>
+          <ion-select-option value="40">40</ion-select-option>
+          <ion-select-option value="50">50</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Type</ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="type">
+          <ion-select-option value="Dry">Dry</ion-select-option>
+          <ion-select-option value="Wet">Wet</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Slot</ion-label>
+        <ion-input type="number" [(ngModel)]="slot" (ionFocus)="jadiClearSlot()" (ionBlur)="jadiNolSlot(slot)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Row</ion-label>
+        <ion-input type="number" [(ngModel)]="row" (ionFocus)="jadiClearRow()" (ionBlur)="jadiNolRow(row)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tier</ion-label>
+        <ion-input type="number" [(ngModel)]="tier" (ionFocus)="jadiClearTier()" (ionBlur)="jadiNolTier(tier)"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+  </ion-card>
+
+  <div class="ion-padding">
+    <ion-button expand="block" class="ion-no-margin" (click)="submit()">Create</ion-button>
+  </div>
+</ion-content>

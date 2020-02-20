@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{dataContainer.length === 1 ? 'Container ' + dataContainer[0].nocontainer : 'Change Data'}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngFor="let data of dataContainer; let i = index;">
+    <p style="font-family:tebal;margin-left: 10px;margin-right: 10px;">Container {{data.nocontainer}}</p>
+    <div class="garis-bawah"></div>
+
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">No Container <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input type="number" [(ngModel)]="container[i]" disabled></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Size</ion-label>
+          <ion-select interface="popover" [(ngModel)]="size[i]" disabled>
+            <ion-select-option value="10">10</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Type</ion-label>
+          <ion-select interface="action-sheet" [(ngModel)]="type[i]" disabled>
+            <ion-select-option value="Dry">Dry</ion-select-option>
+            <ion-select-option value="Wet">Wet</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Slot</ion-label>
+          <ion-input type="number" [(ngModel)]="slot[i]"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Row</ion-label>
+          <ion-input type="number" [(ngModel)]="row[i]"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Tier</ion-label>
+          <ion-input type="number" [(ngModel)]="tier[i]"></ion-input>
+        </ion-item>
+
+
+      </ion-list>
+    </ion-card>
+  </div>
+
+  <div class="ion-padding">
+    <ion-button expand="block" class="ion-no-margin" (click)="submit()">Update</ion-button>
+  </div>
+
+</ion-content>

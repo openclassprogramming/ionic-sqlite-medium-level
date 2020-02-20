@@ -1,0 +1,7 @@
+{
+  "name": "dryPortCikarang",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

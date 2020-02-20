@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="searchText" placeholder="Search by Container or type"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item *ngFor="let data of item | filter:searchText; let i = index;" (click)="detail(data)" detail>
+    <ion-avatar slot="start">
+      <img src="../../assets/images/018-clipboard-1.png">
+    </ion-avatar>
+    <ion-label class="ion-text-wrap">
+      <ion-text>
+        <h3>Container {{data.nocontainer}}</h3>
+        <p style="font-size: 9pt;">Type : {{data.type}}</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+</ion-content>
