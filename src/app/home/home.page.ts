@@ -1,8 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ToastController, NavController } from '@ionic/angular';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { SQLite, DbTransaction, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { ConfigDb } from '../config/setting';
 
 @Component({
   selector: 'app-home',
@@ -18,8 +19,8 @@ export class HomePage {
   hideDetail = [];
 
   config = {
-    name: 'dryportcikarang.db',
-    location: 'default'
+    name: ConfigDb.connection.name,
+    location: ConfigDb.connection.location
   };
 
   timeNow = '';

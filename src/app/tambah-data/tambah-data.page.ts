@@ -3,6 +3,7 @@ import { AlertController, LoadingController, ToastController, NavController } fr
 import { Router, ActivatedRoute } from '@angular/router';
 import { SQLite, DbTransaction, SQLiteObject } from '@ionic-native/sqlite/ngx';
 import * as moment from 'moment';
+import { ConfigDb } from '../config/setting';
 
 @Component({
   selector: 'app-tambah-data',
@@ -21,8 +22,8 @@ export class TambahDataPage implements OnInit {
   timeNow = '';
 
   config = {
-    name: 'dryportcikarang.db',
-    location: 'default'
+    name: ConfigDb.connection.name,
+    location: ConfigDb.connection.location
   };
 
   constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, public toastCtrl: ToastController, public nav: NavController, private route: Router, private sqlite: SQLite) {

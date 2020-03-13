@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="dry.port.test" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Dry Port Cikarang</name>
+<widget id="sqlite.crud.latihan" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SQLITE CRUD</name>
     <description>An awesome app.</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Trisna Dev</author>
     <content src="index.html" />

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, LoadingController, ToastController, NavController } from '@ionic/angular';
 import { SQLite, DbTransaction, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { ConfigDb } from '../config/setting';
 
 @Component({
   selector: 'app-ubah-data',
@@ -30,6 +31,7 @@ export class UbahDataPage implements OnInit {
   //     insert_date: '20 February 2020'
   //   },
   // ];
+
   dataContainer;
 
   container = [];
@@ -40,8 +42,8 @@ export class UbahDataPage implements OnInit {
   tier = [];
 
   config = {
-    name: 'dryportcikarang.db',
-    location: 'default'
+    name: ConfigDb.connection.name,
+    location: ConfigDb.connection.location
   };
 
   constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, public toastCtrl: ToastController, public nav: NavController, private route: Router, private sqlite: SQLite, private param: ActivatedRoute) {
