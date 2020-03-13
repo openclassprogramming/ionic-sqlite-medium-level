@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ToastController, NavController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SQLite, DbTransaction, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { ConfigDb } from '../config/setting';
 
 @Component({
   selector: 'app-cari-data',
@@ -16,8 +17,8 @@ export class CariDataPage implements OnInit {
   hideDetail = [];
 
   config = {
-    name: 'dryportcikarang.db',
-    location: 'default'
+    name: ConfigDb.connection.name,
+    location: ConfigDb.connection.location
   };
 
   formatData = [];
