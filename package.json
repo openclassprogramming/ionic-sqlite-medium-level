@@ -29,7 +29,7 @@
     "cordova-res": "^0.10.0",
     "cordova-sqlite-storage": "^4.0.0",
     "core-js": "^2.5.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng2-search-filter": "^0.5.1",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
